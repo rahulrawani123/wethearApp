@@ -23,11 +23,11 @@ app.get("/weather", async (req, res) => {
     const response = await axios.get(APIUrl);
     weather = response.data;
   } catch (error) {
-    weather = null;
+    weather = 0;
     error = "Error, Please try again";
   }
   
-  res.render("home", { weather, error });
+  res.render("weather", { weather, error });
 });
 
 const port = process.env.PORT || 3000;
